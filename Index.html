@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÔNG TY TNHH TM DV TUẤN QUYÊN - Giải Pháp Phần Mềm Quản Trị Doanh Nghiệp</title>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            dark: '#0f172a'
+                        },
+                        tealBrand: {
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #0284c7 50%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
+        }
+        .pulse-subtle {
+            animation: pulseSubtle 3s infinite;
+        }
+        @keyframes pulseSubtle {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.95; }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-tealBrand-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 relative z-50">
+        <span class="bg-yellow-400 text-slate-900 text-[10px] sm:text-xs uppercase font-extrabold px-2 py-0.5 rounded-full">Ưu Đãi Đặc Biệt</span>
+        <span>Tặng 03 tháng sử dụng miễn phí & Đào tạo tận nơi cho Doanh nghiệp đăng ký trong tháng!</span>
+        <a href="#contact" class="underline hover:text-yellow-200 transition font-bold ml-1">Nhận tư vấn ngay &rarr;</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-tealBrand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-cubes text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-slate-900 block leading-tight">TUẤN QUYÊN</span>
+                        <span class="text-[10px] font-semibold text-brand-600 tracking-wider uppercase block">TM DV COMPANY LIMITED</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#hero" class="hover:text-brand-600 transition">Trang chủ</a>
+                    <a href="#about" class="hover:text-brand-600 transition">Giới thiệu</a>
+                    <a href="#solutions" class="hover:text-brand-600 transition">Giải pháp</a>
+                    <a href="#calculator" class="hover:text-brand-600 transition">Tính ROI</a>
+                    <a href="#pricing" class="hover:text-brand-600 transition">Bảng giá</a>
+                    <a href="#whyus" class="hover:text-brand-600 transition">Ưu điểm</a>
+                    <a href="#contact" class="hover:text-brand-600 transition">Liên hệ</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:0900000000" class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-brand-600 transition">
+                        <i class="fa-solid fa-phone-volume text-brand-600"></i> 
+                        <span>Hotline Hỗ Trợ</span>
+                    </a>
+                    <button onclick="openModal()" class="bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 hover:-translate-y-0.5 transition duration-200">
+                        <i class="fa-solid fa-rocket mr-2"></i>Dùng thử miễn phí
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Trang chủ</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Giới thiệu</a>
+            <a href="#solutions" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Giải pháp phần mềm</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Tính hiệu quả ROI</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Bảng giá gói dịch vụ</a>
+            <a href="#whyus" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Thế mạnh công ty</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded-lg font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-600">Liên hệ & Đăng ký</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <button onclick="openModal(); toggleMobileMenu();" class="w-full bg-brand-600 text-white font-semibold py-3 rounded-xl shadow-md text-center">
+                    <i class="fa-solid fa-rocket mr-2"></i>Đăng ký tư vấn demo
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-brand-900 text-white">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-tealBrand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left text -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-400/30 text-brand-300 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved text-tealBrand-500"></i> CÔNG TY TNHH TM DV TUẤN QUYÊN
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Chuyển Đổi Số Toàn Diện Cùng <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">Phần Mềm Quản Trị Tối Ưu</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Chuyên nghiệp hóa vận hành doanh nghiệp với hệ sinh thái phần mềm: <strong>Kế toán, Bán hàng POS, Quản lý Kho, Nhân sự HRM</strong> và <strong>Lập trình theo yêu cầu chuyên biệt</strong>.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openModal()" class="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-tealBrand-600 hover:from-brand-600 hover:to-tealBrand-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 hover:-translate-y-0.5 transition duration-200 text-base">
+                            <i class="fa-solid fa-paper-plane mr-2"></i>Đăng Ký Tư Vấn & Demo
+                        </button>
+                        <a href="#solutions" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-6 py-4 rounded-xl hover:text-white transition duration-200 text-center text-base">
+                            <i class="fa-solid fa-layer-group mr-2 text-brand-400"></i>Khám phá giải pháp
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-slate-800 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-blue-400">500+</div>
+                            <div class="text-xs text-slate-400 font-medium mt-1">Doanh nghiệp tin dùng</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-teal-400">99.8%</div>
+                            <div class="text-xs text-slate-400 font-medium mt-1">Hài lòng dịch vụ</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-amber-400">24/7</div>
+                            <div class="text-xs text-slate-400 font-medium mt-1">Đội ngũ hỗ trợ kỹ thuật</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Interactive App Mockup Window -->
+                <div class="lg:col-span-6">
+                    <div class="relative bg-slate-800/90 border border-slate-700/80 rounded-2xl shadow-2xl p-4 sm:p-6 backdrop-blur-xl">
+                        <!-- Top Header Bar of App Mockup -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-700 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                                <span class="ml-2 text-xs font-mono text-slate-400">tuanquyen-erp-v4.8.exe</span>
+                            </div>
+                            <div class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-700 text-slate-300">
+                                <i class="fa-solid fa-wifi text-green-400 mr-1"></i> Live Cloud Server
+                            </div>
+                        </div>
+
+                        <!-- Mockup Interactive Tabs -->
+                        <div class="flex flex-wrap gap-2 mb-4 bg-slate-900/60 p-1.5 rounded-xl border border-slate-700/50 text-xs font-medium">
+                            <button onclick="switchHeroTab('acc')" id="heroTab-acc" class="hero-tab-btn flex-1 py-2 px-3 rounded-lg bg-brand-600 text-white font-semibold transition">
+                                <i class="fa-solid fa-calculator mr-1"></i> Kế Toán
+                            </button>
+                            <button onclick="switchHeroTab('pos')" id="heroTab-pos" class="hero-tab-btn flex-1 py-2 px-3 rounded-lg text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-cart-shopping mr-1"></i> Bán Hàng/POS
+                            </button>
+                            <button onclick="switchHeroTab('inv')" id="heroTab-inv" class="hero-tab-btn flex-1 py-2 px-3 rounded-lg text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-boxes-stacked mr-1"></i> Kho Hàng
+                            </button>
+                            <button onclick="switchHeroTab('hrm')" id="heroTab-hrm" class="hero-tab-btn flex-1 py-2 px-3 rounded-lg text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-users mr-1"></i> Nhân Sự
+                            </button>
+                        </div>
+
+                        <!-- Tab Content Previews -->
+                        <div id="heroContent-acc" class="hero-tab-content space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                                    <div class="text-xs text-slate-400">Doanh thu tháng này</div>
+                                    <div class="text-lg font-bold text-teal-400">1,248,500,000 đ</div>
+                                    <div class="text-[10px] text-emerald-400 mt-1"><i class="fa-solid fa-arrow-trend-up mr-1"></i>+18.5% so tháng trước</div>
+                                </div>
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                                    <div class="text-xs text-slate-400">Hóa đơn điện tử xuất</div>
+                                    <div class="text-lg font-bold text-blue-400">3,420 Hóa đơn</div>
+                                    <div class="text-[10px] text-blue-300 mt-1"><i class="fa-solid fa-check-double mr-1"></i>Đã đồng bộ Tổng cục Thuế</div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-xs font-semibold text-slate-300">Biểu đồ Thu Chi & Báo cáo Tài chính</span>
+                                    <span class="text-[10px] bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">Tự động kết xuất</span>
+                                </div>
+                                <div class="h-24 flex items-end gap-2 pt-2 border-b border-slate-700 pb-2">
+                                    <div class="flex-1 bg-brand-600/40 rounded-t h-1/2"></div>
+                                    <div class="flex-1 bg-brand-600/70 rounded-t h-3/4"></div>
+                                    <div class="flex-1 bg-brand-500 rounded-t h-2/3"></div>
+                                    <div class="flex-1 bg-teal-500 rounded-t h-full"></div>
+                                    <div class="flex-1 bg-brand-600 rounded-t h-4/5"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="heroContent-pos" class="hero-tab-content space-y-4 hidden">
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700 flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs text-slate-400">Đơn hàng trong ngày</div>
+                                    <div class="text-lg font-bold text-yellow-400">184 Đơn thành công</div>
+                                </div>
+                                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full font-bold">Máy quét mã QR Live</span>
+                            </div>
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700 text-xs space-y-2">
+                                <div class="flex justify-between font-semibold text-slate-300 border-b border-slate-800 pb-1">
+                                    <span>Mã Đơn</span>
+                                    <span>Sản phẩm</span>
+                                    <span>Thành tiền</span>
+                                </div>
+                                <div class="flex justify-between text-slate-400">
+                                    <span>#HD-9921</span>
+                                    <span>Thiết bị linh kiện mạng A</span>
+                                    <span class="text-teal-400">3,450,000 đ</span>
+                                </div>
+                                <div class="flex justify-between text-slate-400">
+                                    <span>#HD-9922</span>
+                                    <span>Gói phần mềm POS Kế toán</span>
+                                    <span class="text-teal-400">8,900,000 đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="heroContent-inv" class="hero-tab-content space-y-4 hidden">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                                    <div class="text-xs text-slate-400">Tổng mã vật tư kho</div>
+                                    <div class="text-lg font-bold text-cyan-400">12,500 SKUs</div>
+                                </div>
+                                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                                    <div class="text-xs text-slate-400">Cảnh báo tồn kho tối thiểu</div>
+                                    <div class="text-lg font-bold text-amber-400">03 Mã cần nhập</div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700 text-xs">
+                                <div class="text-slate-300 font-semibold mb-2">Trạng thái Kho Hàng Tổng (Kho A & B)</div>
+                                <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-blue-500 to-teal-400 h-2.5 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                    <span>Đã dùng 72% sức chứa</span>
+                                    <span>Còn trống: 2,800 m³</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="heroContent-hrm" class="hero-tab-content space-y-4 hidden">
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700 flex justify-between items-center">
+                                <div>
+                                    <div class="text-xs text-slate-400">Điểm danh nhân sự hôm nay</div>
+                                    <div class="text-lg font-bold text-purple-400">142/145 Nhân viên (98%)</div>
+                                </div>
+                                <i class="fa-solid fa-fingerprint text-2xl text-purple-400"></i>
+                            </div>
+                            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700 text-xs space-y-2">
+                                <div class="flex justify-between items-center text-slate-300">
+                                    <span>Bảng tính lương tự động Tháng này</span>
+                                    <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Hoàn thành</span>
+                                </div>
+                                <div class="text-[11px] text-slate-400">Tự động kết xuất BHXH, Công nợ, KPI & Thuế TNCN chính xác 100%.</div>
+                            </div>
+                        </div>
+
+                        <!-- Footer tagline in mockup -->
+                        <div class="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-400">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> Bảo mật dữ liệu SSL 256-bit</span>
+                            <span class="text-brand-300 hover:underline cursor-pointer" onclick="openModal()">Khám phá demo chi tiết &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION / CÔNG TY TUẤN QUYÊN -->
+    <section id="about" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <div class="inline-block px-3.5 py-1.5 rounded-full bg-brand-50 text-brand-700 font-semibold text-xs uppercase tracking-wider">
+                        Về Chúng Tôi - TUẤN QUYÊN TM DV
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Đối Tác Công Nghệ Đáng Tin Cậy Của Doanh Nghiệp Việt
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        <strong>CÔNG TY TNHH TM DV TUẤN QUYÊN</strong> là đơn vị chuyên sâu trong lĩnh vực tư vấn, thiết kế, triển khai phần mềm quản trị doanh nghiệp toàn diện. Chúng tôi thấu hiểu từng nỗi đau trong khâu quản lý kho, theo dõi kế toán tài chính, kiểm soát bán hàng và tính lương nhân sự.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Với phương châm <em>"Đơn giản hóa quản trị - Tối ưu hóa lợi nhuận"</em>, các giải pháp của Tuấn Quyên được thiết kế giao diện thân thiện, chuẩn hóa quy trình, nâng cao năng suất làm việc gấp 3 lần cho mọi mô hình từ Hộ kinh doanh, SME đến Tập đoàn.
+                    </p>
+
+                    <!-- Feature List -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Chuẩn Hóa Quy Trình</h4>
+                                <p class="text-xs text-slate-500">Đồng bộ hóa dữ liệu giữa các bộ phận không bị đứt gãy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-tealBrand-500/10 text-tealBrand-600 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Tùy Biến Theo Yêu Cầu</h4>
+                                <p class="text-xs text-slate-500">Lập trình tính năng riêng biệt phù hợp đặc thù ngành nghề.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Hỗ Trợ Tận Tâm</h4>
+                                <p class="text-xs text-slate-500">Đội ngũ kỹ thuật hỗ trợ trực tiếp & qua UltraViewer/Zalo.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold shrink-0">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Chi Phí Tối Ưu</h4>
+                                <p class="text-xs text-slate-500">Đầu tư 1 lần hoặc thuê bao linh hoạt, không chi phí ẩn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Stats Grid -->
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-br from-brand-600 to-brand-800 text-white p-6 rounded-2xl shadow-xl space-y-2">
+                            <i class="fa-solid fa-laptop-code text-3xl opacity-80"></i>
+                            <div class="text-3xl font-black">100%</div>
+                            <div class="text-xs text-blue-100 font-medium">Bản quyền phần mềm thuộc Công ty Tuấn Quyên</div>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 space-y-2">
+                            <i class="fa-solid fa-user-shield text-3xl text-brand-600"></i>
+                            <div class="text-3xl font-black text-slate-900">10+</div>
+                            <div class="text-xs text-slate-500 font-medium">Năm kinh nghiệm phát triển hệ thống ERP</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-6">
+                        <div class="bg-tealBrand-600 text-white p-6 rounded-2xl shadow-xl space-y-2">
+                            <i class="fa-solid fa-database text-3xl opacity-80"></i>
+                            <div class="text-3xl font-black">24/7</div>
+                            <div class="text-xs text-teal-100 font-medium">Sao lưu dữ liệu tự động trên Cloud & On-Premises</div>
+                        </div>
+                        <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl space-y-2">
+                            <i class="fa-solid fa-building text-3xl text-yellow-400"></i>
+                            <div class="text-3xl font-black text-yellow-400">50+</div>
+                            <div class="text-xs text-slate-400 font-medium">Lĩnh vực ngành nghề đã triển khai thành công</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY SERVICES & SOLUTIONS SHOWCASE -->
+    <section id="solutions" class="py-16 sm:py-24 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 font-semibold text-xs uppercase tracking-wider">Hệ Sinh Thái Giải Pháp</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Các Giải Pháp Phần Mềm Trọng Tâm</h2>
+                <p class="text-slate-600 text-base">Được thiết kế chuyên biệt đáp ứng nhu cầu thực tế của các khối phòng ban trong doanh nghiệp.</p>
+            </div>
+
+            <!-- Solutions Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Solution 1: Kế toán -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Phần Mềm Kế Toán Doanh Nghiệp</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Giải pháp kế toán tài chính toàn diện theo Thông tư 200/TT-BTC & 133/TT-BTC. Tự động kết xuất báo cáo thuế, hóa đơn điện tử, sổ sách kế toán nhanh chóng.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Quản lý Thu - Chi, Công nợ khách hàng & nhà cung cấp</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Kết nối trực tiếp hệ thống Hóa đơn điện tử & Thuế</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Báo cáo Tài chính tự động (Bảng CĐKT, LCTTC, Lợi nhuận)</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Phần mềm Kế toán')" class="w-full py-2.5 px-4 rounded-xl border border-brand-600 text-brand-600 font-semibold text-sm hover:bg-brand-600 hover:text-white transition duration-200">
+                        Xem chi tiết & Dùng thử &rarr;
+                    </button>
+                </div>
+
+                <!-- Solution 2: Bán hàng & POS -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-tealBrand-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-tealBrand-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Phần Mềm Quản Lý Bán Hàng & POS</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Tối ưu cho chuỗi cửa hàng, siêu thị, bán buôn và bán lẻ. Tích hợp quét mã vạch, in hóa đơn siêu tốc, tích điểm thành viên và báo cáo doanh thu realtime.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealBrand-600"></i> Bán hàng đa kênh (Offline POS & Kết nối Website/Sàn)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealBrand-600"></i> Hỗ trợ máy in hóa đơn, máy quét mã vạch, ngăn kéo tiền</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealBrand-600"></i> Quản lý khuyến mãi, giảm giá, voucher linh hoạt</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Phần mềm Bán hàng & POS')" class="w-full py-2.5 px-4 rounded-xl border border-tealBrand-600 text-tealBrand-600 font-semibold text-sm hover:bg-tealBrand-600 hover:text-white transition duration-200">
+                        Xem chi tiết & Dùng thử &rarr;
+                    </button>
+                </div>
+
+                <!-- Solution 3: Quản lý Kho -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Phần Mềm Quản Lý Kho & Vật Tư</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Kiểm soát chính xác số lượng tồn kho theo vị trí, lô sản xuất, hạn sử dụng (Expiry Date). Cảnh báo nhập xuất kho tức thời, phòng ngừa thất thoát.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Quản lý Đa Kho, chuyển kho nội bộ nhanh chóng</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Kiểm kê kho bằng App Mobile quét mã QR/Barcode</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Cảnh báo Hạn sử dụng & Tồn kho tối thiểu/tối đa</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Phần mềm Quản lý Kho')" class="w-full py-2.5 px-4 rounded-xl border border-amber-600 text-amber-600 font-semibold text-sm hover:bg-amber-600 hover:text-white transition duration-200">
+                        Xem chi tiết & Dùng thử &rarr;
+                    </button>
+                </div>
+
+                <!-- Solution 4: Quản lý Nhân sự HRM -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-purple-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-3">Quản Lý Nhân Sự & Tiền Lương (HRM)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Giải pháp hồ sơ nhân sự, chấm công khuôn mặt/GPS, tính lương tự động, đánh giá KPI và quản lý chế độ bảo hiểm xã hội chuẩn quy định Lao động.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600"></i> Kết nối máy chấm công vân tay, khuôn mặt & App GPS</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600"></i> Tính lương tự động theo ca, tăng giờ, doanh số commission</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600"></i> Quản lý hợp đồng lao động, ngày phép, BHXH</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Phần mềm HRM Nhân sự')" class="w-full py-2.5 px-4 rounded-xl border border-purple-600 text-purple-600 font-semibold text-sm hover:bg-purple-600 hover:text-white transition duration-200">
+                        Xem chi tiết & Dùng thử &rarr;
+                    </button>
+                </div>
+
+                <!-- Solution 5: Lập trình theo yêu cầu -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-2">
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-rose-600 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-3">Thiết Kế & Lập Trình Phần Mềm Theo Yêu Cầu</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Doanh nghiệp bạn có quy trình sản xuất, kinh doanh đặc thù không tìm thấy trên các phần mềm đóng đóng gói sẵn? Tuấn Quyên nhận tư vấn khảo sát & may đo phần mềm ERP chuyên biệt.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-semibold">Phần mềm Sản xuất</span>
+                                <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-semibold">Web App / Mobile App</span>
+                                <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-semibold">Quản lý Bất động sản</span>
+                                <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-semibold">Tích hợp API phần mềm</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 text-white p-6 rounded-xl space-y-4">
+                            <h4 class="font-bold text-base text-yellow-400">Quy Trình Triển Khai May Đo:</h4>
+                            <ol class="space-y-2 text-xs text-slate-300 list-decimal list-inside">
+                                <li>Khảo sát quy trình thực tế tận nơi</li>
+                                <li>Lập bản kịch bản chức năng & wireframe</li>
+                                <li>Lập trình module & kiểm thử UAT</li>
+                                <li>Đào tạo nhân sự & chuyển giao 100% dữ liệu</li>
+                            </ol>
+                            <button onclick="openModal('Phần mềm Theo Yêu Cầu')" class="w-full py-2.5 px-4 rounded-xl bg-rose-600 text-white font-semibold text-sm hover:bg-rose-700 transition duration-200">
+                                Nhận tư vấn may đo giải pháp &rarr;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CALCULATOR (ROI & Time Saver) -->
+    <section id="calculator" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 font-semibold text-xs uppercase tracking-wider">Công Cụ Ước Tính</span>
+                    <h2 class="text-3xl font-extrabold text-white">Tính Năng Năng Suất Doanh Nghiệp Bạn Sẽ Tiết Kiệm</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Thử điều chỉnh quy mô nhân sự và khối lượng công việc hiện tại để xem hệ sinh thái phần mềm Tuấn Quyên giúp cắt giảm bao nhiêu chi phí & thời gian lãng phí mỗi tháng!
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
+                    <!-- Sliders -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <label for="staffRange" class="text-slate-300">Số lượng nhân sự doanh nghiệp:</label>
+                                <span id="staffVal" class="text-brand-400 font-bold">25 Người</span>
+                            </div>
+                            <input type="range" id="staffRange" min="5" max="200" value="25" step="5" class="w-full accent-brand-500 bg-slate-700 h-2 rounded-lg cursor-pointer" oninput="calculateROI()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <label for="salaryRange" class="text-slate-300">Lương trung bình / nhân viên (Triệu VNĐ/tháng):</label>
+                                <span id="salaryVal" class="text-teal-400 font-bold">12 Triệu</span>
+                            </div>
+                            <input type="range" id="salaryRange" min="5" max="40" value="12" step="1" class="w-full accent-tealBrand-500 bg-slate-700 h-2 rounded-lg cursor-pointer" oninput="calculateROI()">
+                        </div>
+                    </div>
+
+                    <!-- Calculated Output -->
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700 text-center">
+                        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
+                            <div class="text-xs text-slate-400 uppercase font-semibold">Giờ làm việc tiết kiệm / tháng</div>
+                            <div id="savedHours" class="text-2xl sm:text-3xl font-black text-teal-400 mt-1">150 Giờ</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Giảm thiểu sai sót thủ công</div>
+                        </div>
+                        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
+                            <div class="text-xs text-slate-400 uppercase font-semibold">Chi phí ước tính tiết kiệm</div>
+                            <div id="savedCost" class="text-2xl sm:text-3xl font-black text-amber-400 mt-1">36,000,000 đ</div>
+                            <div class="text-[11px] text-slate-400 mt-1">Mỗi tháng cho doanh nghiệp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE TUAN QUYEN -->
+    <section id="whyus" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-tealBrand-500/10 text-tealBrand-600 font-semibold text-xs uppercase tracking-wider">Thế Mạnh Nổi Bật</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Tại Sao Chọn Công Ty Tuấn Quyên?</h2>
+                <p class="text-slate-600 text-base">Cam kết đồng hành cùng sự phát triển bền vững của doanh nghiệp bạn.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Giao Diện Dễ Sử Dụng</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Thiết kế tối giản, nhân viên chỉ mất 15-30 phút làm quen là có thể thao tác thành thạo không cần trình độ CNTT cao.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-tealBrand-600 text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Bảo Mật An Toàn Tuyệt Đối</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Dữ liệu mã hóa theo chuẩn ngân hàng, phân quyền người dùng chi tiết đến từng thao tác xem, sửa, xóa thông tin.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Đa Nền Tảng Cloud & Mobile</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Truy cập báo cáo tình hình kinh doanh mọi lúc mọi nơi trên điện thoại, máy tính bảng hoặc máy tính bàn.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Đào Tạo & Triển Khai Tận Nơi</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Chuyên viên Tuấn Quyên trực tiếp đến văn phòng hỗ trợ cài đặt, đào tạo quy trình cho từng phòng ban.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-16 sm:py-24 bg-slate-100/80 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 font-semibold text-xs uppercase tracking-wider">Bảng Giá Minh Bạch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Chi Phí Đăng Ký Linh Hoạt</h2>
+                <p class="text-slate-600 text-base">Lựa chọn gói dịch vụ phù hợp nhất với quy mô doanh nghiệp của bạn.</p>
+                
+                <!-- Toggle Monthly/Yearly -->
+                <div class="flex items-center justify-center gap-4 pt-4">
+                    <span class="text-sm font-semibold text-slate-700">Thanh toán Theo Tháng</span>
+                    <button id="pricingToggle" onclick="togglePricing()" class="w-14 h-8 bg-brand-600 rounded-full p-1 relative transition duration-300 focus:outline-none" aria-label="Toggle Pricing">
+                        <div id="pricingDot" class="w-6 h-6 bg-white rounded-full shadow-md transform translate-x-6 transition duration-300"></div>
+                    </button>
+                    <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5">
+                        Thanh toán Theo Năm 
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full">Tiết kiệm 20%</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Starter Plan -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm flex flex-col justify-between hover:border-slate-400 transition">
+                    <div>
+                        <div class="text-slate-500 font-bold text-sm uppercase mb-2">Gói Khởi Nghiệp / HKD</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4">Gói Tiêu Chuẩn</h3>
+                        <div class="mb-6">
+                            <span class="price-val text-4xl font-black text-slate-900" data-monthly="299,000" data-yearly="239,000">239,000</span>
+                            <span class="text-slate-500 text-sm"> đ / tháng</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6">Dành cho Hộ kinh doanh, Cửa hàng nhỏ với 1-3 người sử dụng.</p>
+
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Quản lý Bán hàng POS cơ bản</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Quản lý Kho 1 chi nhánh</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Xuất hóa đơn bán lẻ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Hỗ trợ kỹ thuật qua Online</li>
+                            <li class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-xmark text-slate-300"></i> Không gồm Kế toán thuế sâu</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Gói Tiêu Chuẩn')" class="w-full py-3 rounded-xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-50 transition">
+                        Đăng ký Gói Tiêu Chuẩn
+                    </button>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="bg-gradient-to-b from-slate-900 to-brand-900 text-white rounded-2xl border-2 border-brand-500 p-8 shadow-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow">
+                        Được Lựa Chọn Nhất
+                    </span>
+                    <div>
+                        <div class="text-brand-300 font-bold text-sm uppercase mb-2">Doanh Nghiệp SME</div>
+                        <h3 class="text-2xl font-black text-white mb-4">Gói Chuyên Nghiệp</h3>
+                        <div class="mb-6">
+                            <span class="price-val text-4xl font-black text-teal-400" data-monthly="699,000" data-yearly="559,000">559,000</span>
+                            <span class="text-slate-300 text-sm"> đ / tháng</span>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-6">Đầy đủ bộ công cụ Quản lý Bán hàng, Kho & Kế toán cho SME.</p>
+
+                        <ul class="space-y-3 text-xs text-slate-200 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Trọn bộ Bán hàng POS + Quản lý Kho</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Module Kế toán doanh nghiệp chuẩn</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Cho phép đến 10 người dùng cùng lúc</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Kết nối Hóa đơn điện tử tự động</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Hỗ trợ cài đặt & Đào tạo tận nơi</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Gói Chuyên Nghiệp')" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-500 to-tealBrand-500 text-white font-extrabold hover:from-brand-600 hover:to-tealBrand-600 transition shadow-lg">
+                        Đăng ký Gói Chuyên Nghiệp
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm flex flex-col justify-between hover:border-slate-400 transition">
+                    <div>
+                        <div class="text-slate-500 font-bold text-sm uppercase mb-2">Tập Đoàn / Chuỗi Đa Chi Nhánh</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4">Gói Doanh Nghiệp</h3>
+                        <div class="mb-6">
+                            <span class="text-3xl font-black text-slate-900">Tùy Chỉnh</span>
+                            <span class="text-slate-500 text-xs block mt-1">Theo quy mô & tính năng riêng</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6">Cho doanh nghiệp cần lập trình tính năng may đo riêng biệt & bảo mật cao.</p>
+
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Bao gồm tất cả các module ERP (HRM, Kho, POS, Kế toán)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Lập trình tính năng theo yêu cầu riêng</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Không giới hạn số lượng tài khoản</li>
+                            <li class="flex items-center gap-2"><li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Máy chủ Cloud riêng (Private Server)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Kỹ sư hỗ trợ ưu tiên 24/7/365</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('Gói Doanh Nghiệp Tùy Chỉnh')" class="w-full py-3 rounded-xl border border-brand-600 font-bold text-brand-600 hover:bg-brand-600 hover:text-white transition">
+                        Tư vấn gói tùy chỉnh &rarr;
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <span class="px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-xs uppercase tracking-wider">Ý Kiến Khách Hàng</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Được Tin Tưởng Bởi Hàng Trăm Chủ Doanh Nghiệp</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">
+                        "Từ khi áp dụng phần mềm Kế toán và Kho của Tuấn Quyên, việc theo dõi hàng tồn và báo cáo thuế mỗi tháng giảm bớt 70% thời gian cho đội ngũ kế toán. Hỗ trợ kỹ thuật rất nhiệt tình."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
+                            NV
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Nguyễn Văn Hoàng</div>
+                            <div class="text-[11px] text-slate-500">Giám Đốc - Chuỗi Thiết Bị Điện</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">
+                        "Giải pháp POS bán hàng quét mã vạch cực mượt. Nhân viên bên mình thao tác nhanh, không bị ùn tắc lúc đông khách. Công ty Tuấn Quyên nâng cấp tính năng theo góp ý rất nhanh."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-tealBrand-600 text-white font-bold flex items-center justify-center text-sm">
+                            TH
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Trần Thị Thu Hà</div>
+                            <div class="text-[11px] text-slate-500">Chủ Hệ Thống Bán Lẻ Siêu Thị</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">
+                        "Hệ thống may đo phần mềm quản lý sản xuất cho công ty tôi chuẩn chỉ từng chi tiết. Dữ liệu chính xác, phân quyền bảo mật rõ ràng. Rất đáng để đầu tư lâu dài!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
+                            LM
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Lê Minh Tuấn</div>
+                            <div class="text-[11px] text-slate-500">Giám Đốc Công Ty Chế Biến Mẫu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & REGISTRATION FORM -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 font-semibold text-xs uppercase tracking-wider">Liên Hệ Với Tuấn Quyên</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Sẵn Sàng Nâng Tầm Quản Trị Doanh Nghiệp?</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Hãy để lại thông tin hoặc liên hệ hotline để nhận buổi tư vấn khảo sát quy trình miễn phí và trải nghiệm phần mềm trực tiếp từ chuyên viên Tuấn Quyên.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-600/30 border border-brand-500/40 text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-building text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">CÔNG TY TNHH TM DV TUẤN QUYÊN</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Chuyên về Thiết kế, Xây dựng Phần mềm Doanh nghiệp, Kế toán, Bán hàng, Kho & HRM.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-tealBrand-500/20 border border-tealBrand-500/40 text-teal-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Hotline Tư Vấn / Zalo</h4>
+                                <p class="text-sm font-extrabold text-teal-400 mt-0.5">0900 000 000 - (028) 3800 9999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Email Hỗ Trợ & Báo Giá</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">contact@tuanquyen.com.vn / hotro@tuanquyen.com.vn</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Thời Gian Làm Việc</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Thứ 2 - Thứ 7: 8:00 - 17:30 (Hỗ trợ Kỹ thuật khẩn cấp 24/7)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Đăng Ký Tư Vấn & Dùng Thử</h3>
+                        <p class="text-xs text-slate-500 mb-6">Hoàn tất form bên dưới, chuyên viên kỹ thuật sẽ liên hệ trong 15 phút.</p>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="fullName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Họ và tên *</label>
+                                    <input type="text" id="fullName" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">Số điện thoại *</label>
+                                    <input type="tel" id="phone" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase mb-1">Email doanh nghiệp</label>
+                                    <input type="email" id="email" placeholder="congty@domain.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm">
+                                </div>
+                                <div>
+                                    <label for="companyName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Tên công ty / Cửa hàng</label>
+                                    <input type="text" id="companyName" placeholder="Công ty TNHH ABC" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="solutionSelect" class="block text-xs font-bold text-slate-700 uppercase mb-1">Giải pháp bạn quan tâm *</label>
+                                <select id="solutionSelect" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm bg-white">
+                                    <option value="">-- Chọn giải pháp cần tư vấn --</option>
+                                    <option value="Phần mềm Kế toán Doanh nghiệp">Phần mềm Kế toán Doanh nghiệp</option>
+                                    <option value="Phần mềm Bán hàng & POS">Phần mềm Quản lý Bán hàng & POS</option>
+                                    <option value="Phần mềm Quản lý Kho">Phần mềm Quản lý Kho & Vật tư</option>
+                                    <option value="Quản lý Nhân sự HRM">Phần mềm Quản lý Nhân sự & Tiền lương (HRM)</option>
+                                    <option value="Thiết kế Phần mềm Theo Yêu Cầu">Lập trình / Thiết kế phần mềm theo yêu cầu</option>
+                                    <option value="Trọn bộ Hệ thống ERP">Trọn bộ Hệ thống Quản trị ERP</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="notes" class="block text-xs font-bold text-slate-700 uppercase mb-1">Ghi chú thêm nhu cầu</label>
+                                <textarea id="notes" rows="3" placeholder="Mô tả sơ lược số lượng máy sử dụng, quy mô kho hoặc yêu cầu đặc thù..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-600 focus:ring-2 focus:ring-brand-500/20 text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 via-brand-700 to-tealBrand-600 hover:from-brand-700 hover:to-tealBrand-700 text-white font-extrabold text-base shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 transition duration-200">
+                                <i class="fa-solid fa-paper-plane mr-2"></i>Gửi Yêu Cầu Tư Vấn & Dùng Thử
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-cubes text-sm"></i>
+                        </div>
+                        <span class="text-base font-extrabold text-white tracking-tight">TUẤN QUYÊN TM DV</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        CÔNG TY TNHH TM DV TUẤN QUYÊN - Tiên phong trong giải pháp thiết kế, xây dựng phần mềm quản trị doanh nghiệp, kế toán, bán hàng, kho & HRM.
+                    </p>
+                    <div class="flex gap-3 text-base">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-brand-600 text-slate-300 hover:text-white flex items-center justify-center transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Giải Pháp Phần Mềm</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#solutions" class="hover:text-white transition">Phần mềm Kế toán Doanh nghiệp</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Phần mềm Bán hàng & POS</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Phần mềm Quản lý Kho & Vật tư</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Quản lý Nhân sự & Tiền lương HRM</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Thiết kế Phần mềm Theo Yêu Cầu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-white transition">Giới thiệu Công ty</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition">Công cụ Tính ROI</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Bảng giá gói dịch vụ</a></li>
+                        <li><a href="#whyus" class="hover:text-white transition">Tại sao chọn Tuấn Quyên</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Đăng ký Demo trực tiếp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Thông Tin Pháp Lý</h4>
+                    <p class="text-slate-400">
+                        CÔNG TY TNHH TM DV TUẤN QUYÊN<br>
+                        MST: 031xxxxxxx - Do Sở KH&ĐT TP.HCM Cấp.<br>
+                        Địa chỉ: TP. Hồ Chí Minh, Việt Nam.<br>
+                        Hotline Hỗ Trợ: 0900 000 000
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-block px-3 py-1 bg-slate-900 border border-slate-800 rounded text-[10px] text-emerald-400 font-mono">
+                            <i class="fa-solid fa-shield text-xs mr-1"></i> ISO 27001 Data Security Certified
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
+                <div>
+                    &copy; 2026 CÔNG TY TNHH TM DV TUẤN QUYÊN. Tất cả quyền được bảo lưu.
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Chính sách bảo mật</a>
+                    <a href="#" class="hover:underline">Điều khoản sử dụng</a>
+                    <a href="#" class="hover:underline">Quy trình bàn giao</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR DEMO REGISTRATION -->
+    <div id="demoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm hidden">
+        <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative border border-slate-100 animate-fadeIn">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-rocket text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900">Đăng Ký Trải Nghiệm Demo</h3>
+                    <p class="text-xs text-slate-500" id="modalSubTitle">Phần mềm Công ty TNHH TM DV Tuấn Quyên</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4 pt-2">
+                <div>
+                    <label for="modalName" class="block text-xs font-bold text-slate-700 uppercase mb-1">Họ tên người liên hệ *</label>
+                    <input type="text" id="modalName" required placeholder="Nguyễn Văn A" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-600">
+                </div>
+                <div>
+                    <label for="modalPhone" class="block text-xs font-bold text-slate-700 uppercase mb-1">Số điện thoại / Zalo *</label>
+                    <input type="tel" id="modalPhone" required placeholder="0901234567" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-600">
+                </div>
+                <div>
+                    <label for="modalService" class="block text-xs font-bold text-slate-700 uppercase mb-1">Giải pháp lựa chọn</label>
+                    <input type="text" id="modalService" readonly class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 text-sm font-semibold">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition">
+                    Xác Nhận Đăng Ký Demo ngay
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transform translate-y-24 opacity-0 transition duration-300 pointer-events-none">
+        <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-circle-check text-lg"></i>
+        </div>
+        <div>
+            <div class="font-bold text-sm text-white" id="toastTitle">Đăng ký thành công!</div>
+            <div class="text-xs text-slate-300" id="toastDesc">Tuấn Quyên sẽ liên hệ với bạn trong thời gian sớm nhất.</div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Hero Interactive Tab Switcher
+        function switchHeroTab(tabKey) {
+            // Update Tab Buttons
+            document.querySelectorAll('.hero-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white', 'font-semibold');
+                btn.classList.add('text-slate-400');
+            });
+            const activeBtn = document.getElementById(`heroTab-${tabKey}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-brand-600', 'text-white', 'font-semibold');
+                activeBtn.classList.remove('text-slate-400');
+            }
+
+            // Update Tab Contents
+            document.querySelectorAll('.hero-tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            const activeContent = document.getElementById(`heroContent-${tabKey}`);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Pricing Yearly/Monthly Toggle
+        let isYearly = true;
+        function togglePricing() {
+            isYearly = !isYearly;
+            const dot = document.getElementById('pricingDot');
+            const priceVals = document.querySelectorAll('.price-val');
+
+            if (isYearly) {
+                dot.classList.add('translate-x-6');
+                dot.classList.remove('translate-x-0');
+            } else {
+                dot.classList.remove('translate-x-6');
+                dot.classList.add('translate-x-0');
+            }
+
+            priceVals.forEach(el => {
+                const val = isYearly ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
+                if (val) el.textContent = val;
+            });
+        }
+
+        // ROI Calculator Logic
+        function calculateROI() {
+            const staff = parseInt(document.getElementById('staffRange').value);
+            const salary = parseInt(document.getElementById('salaryRange').value);
+
+            document.getElementById('staffVal').textContent = staff + " Người";
+            document.getElementById('salaryVal').textContent = salary + " Triệu";
+
+            // Saved hours formula roughly ~6 hours saved per staff per month
+            const savedHours = staff * 6;
+            // Saved cost calculation roughly ~12% efficiency gain
+            const monthlySalaryBudget = staff * salary * 1000000;
+            const savedMoney = Math.round(monthlySalaryBudget * 0.12);
+
+            document.getElementById('savedHours').textContent = savedHours + " Giờ";
+            document.getElementById('savedCost').textContent = savedMoney.toLocaleString('vi-VN') + " đ";
+        }
+
+        // Modal Logic
+        function openModal(serviceName = 'Hệ sinh thái Phần mềm Tuấn Quyên') {
+            document.getElementById('modalService').value = serviceName;
+            document.getElementById('modalSubTitle').textContent = `Giải pháp: ${serviceName}`;
+            document.getElementById('demoModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('demoModal').classList.add('hidden');
+        }
+
+        // Toast Notification Handler
+        function showToast(title, desc) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastDesc').textContent = desc;
+
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
+        }
+
+        // Form Submission Handlers
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const sol = document.getElementById('solutionSelect').value;
+            showToast(`Cảm ơn ${name}!`, `Tuấn Quyên đã ghi nhận đăng ký gói ${sol || 'Tư vấn'}.`);
+            document.getElementById('contactForm').reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modalName').value;
+            closeModal();
+            showToast(`Đăng ký thành công!`, `Chuyên viên sẽ gọi cho ${name} trong 15 phút.`);
+        }
+
+        // Close modal when clicking backdrop
+        window.onclick = function(event) {
+            const modal = document.getElementById('demoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        // Initialize ROI on load
+        window.onload = function() {
+            calculateROI();
+        };
+    </script>
+</body>
+</html>
